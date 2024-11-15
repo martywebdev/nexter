@@ -14,11 +14,19 @@
   padding-top: 43m;
 
   display: grid;
-  grid-template-rows: 1fr min-content minmax(6rem, min-content)  1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   //this is fix for responsive logos
   grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center;
+
+  @media screen and (max-width: $bp-medium) {
+    grid-column: 1 /-1;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
 
   &__logo {
     height: 3rem;

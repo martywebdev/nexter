@@ -8,9 +8,14 @@
 
     display: grid; 
     grid-template-columns: repeat(6, 1fr);
-    grid-row: repeat(6, 1fr);  
+    grid-template-rows: repeat(6, 1fr);  
     align-items: center;
+    background-size: cover;
 
+    @media screen and (max-width: $bp-medium) {
+      grid-column: 1 / -1;
+      padding: 6rem;
+    }
     &__img--1 {
       //image will keep aspect ratio!!!
       width: 100%;
@@ -18,6 +23,11 @@
       grid-row: 2 / 6;
       grid-column: 2 / 6;
       box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: .1);
+
+      @media screen and (max-width: $bp-medium) {
+        grid-column: 1 / 5;
+        grid-row: 1 / -1;
+      }
     }
 
     &__img--2 {
@@ -26,6 +36,10 @@
       grid-row: 4 / 6;
       z-index: 1;
       box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: .2);
+      @media screen and (max-width: $bp-medium) {
+        grid-row: 1 / -1;
+        width: 100%;
+      }
     }
   }
 
@@ -43,6 +57,11 @@
     display: grid;
     align-content: center;
     justify-items: start;
+
+    @media screen and (max-width: $bp-medium) {
+      grid-column: 1 / -1;
+      grid-row: 5 / 6;
+    }
   }
 
   &__text {
